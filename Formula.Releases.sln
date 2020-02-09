@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{55315224-D01F-4889-9A30-3B31C6CC4D36}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{662EFB7E-7565-4C53-8802-BD81D248C6CC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "releases", "releases", "{BE203FE8-F18E-42DD-A3F2-8504C090E4DC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Itens", "Solution Itens", "{DED63D8A-0068-4D5D-9BEE-AC2784008342}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formula.Releases.Az", "src\Formula.Releases.Az\Formula.Releases.Az.csproj", "{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D} = {55315224-D01F-4889-9A30-3B31C6CC4D36}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {69F80324-4B4E-422F-AEDC-1BF5A2A1C4CF}
+	EndGlobalSection
+EndGlobal

@@ -19,27 +19,37 @@ namespace Formula.Releases.Az.Services
 
         public List<Release> GetReleases()
         {
+            var fileArray = GetFileList();
             List<Release> releases = new List<Release>();
-            string[] fileArray = Directory.GetFiles(_context.FunctionAppDirectory + "/Data", "*.md");
 
             for (int i = 0; i < fileArray.Length; i++)
             {
-                string fileName = fileArray[i];
-                if (fileName.Contains(".md") && fileName.Contains(@"\"))
-                {
-                    int mdIndex = fileName.IndexOf(".md");
-                    string versionName = fileName.Remove(mdIndex, 3).Substring(fileName.LastIndexOf(@"\")).Remove(0, 1);
+                string releaseName = GetReleaseName(fileArray[i]);
 
+                if (!string.IsNullOrEmpty(releaseName))
                     releases.Add(new Release()
                     {
                         Id = i,
-                        VersionName = versionName,
-                        Url = _baseUri + versionName
+                        VersionName = releaseName,
+                        Url = _baseUri + releaseName
                     });
-                }
             }
 
             return releases;
+        }
+
+        public string[] GetFileList()
+        {
+            return Directory.GetFiles(_context.FunctionAppDirectory + "/Data", "*.md");
+        }
+
+        public string GetReleaseName(string path)
+        {
+            if (!path.Contains(".md") && !path.Contains(@"\"))
+                return null;
+
+            int mdIndex = path.IndexOf(".md");
+            return path.Remove(mdIndex, 3).Substring(path.LastIndexOf(@"\")).Remove(0, 1);
         }
     }
 }

@@ -17,6 +17,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Itens", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formula.Releases.Az", "src\Formula.Releases.Az\Formula.Releases.Az.csproj", "{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formula.Releases.Az.Unit.Test", "tests\Formula.Releases.Az.Unit.Test\Formula.Releases.Az.Unit.Test.csproj", "{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,12 +29,17 @@ Global
 		{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D} = {55315224-D01F-4889-9A30-3B31C6CC4D36}
+		{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293} = {662EFB7E-7565-4C53-8802-BD81D248C6CC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {69F80324-4B4E-422F-AEDC-1BF5A2A1C4CF}

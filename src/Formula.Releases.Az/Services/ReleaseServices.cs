@@ -40,7 +40,14 @@ namespace Formula.Releases.Az.Services
 
         public string[] GetFileList()
         {
-            return Directory.GetFiles(_context.FunctionAppDirectory + "/Data", "*.md");
+            try
+            {
+                return Directory.GetFiles(_context.FunctionAppDirectory + "/Data", "*.md");
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
         }
 
         public string GetReleaseName(string path)

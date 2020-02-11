@@ -13,11 +13,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Itens", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		LICENSE = LICENSE
+		README.md = README.md
 	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formula.Releases.Az", "src\Formula.Releases.Az\Formula.Releases.Az.csproj", "{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formula.Releases.Az.Unit.Test", "tests\Formula.Releases.Az.Unit.Test\Formula.Releases.Az.Unit.Test.csproj", "{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formula.Releases.Az.Unit.Test", "tests\Formula.Releases.Az.Unit.Test\Formula.Releases.Az.Unit.Test.csproj", "{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

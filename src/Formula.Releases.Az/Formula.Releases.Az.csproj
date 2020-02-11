@@ -8,9 +8,6 @@
     <PackageReference Include="Microsoft.NET.Sdk.Functions" Version="3.0.3" />
   </ItemGroup>
   <ItemGroup>
-    <None Update="Data\v1.0.23.md">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="host.json">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -18,5 +15,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <CopyToPublishDirectory>Never</CopyToPublishDirectory>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
   </ItemGroup>
 </Project>

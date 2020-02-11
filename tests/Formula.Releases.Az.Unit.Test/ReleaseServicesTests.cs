@@ -18,7 +18,7 @@ namespace Formula.Releases.Az.Unit.Test
             
             ExecutionContext context = new ExecutionContext
             {
-                FunctionAppDirectory = appPath
+                FunctionAppDirectory = testPath
             };
             _releaseServices = new ReleaseServices(context);
         }
@@ -44,7 +44,10 @@ namespace Formula.Releases.Az.Unit.Test
         public void ShouldReturnListOfReleases()
         {
             var list = _releaseServices.GetReleases();
-            Assert.Pass();
+            
+            list.Should().HaveCount(2);
+            list[0].VersionName.Should().Be("v1.0.0");
+            list[1].VersionName.Should().Be("v2.0.0");
         }
 
         [Test]

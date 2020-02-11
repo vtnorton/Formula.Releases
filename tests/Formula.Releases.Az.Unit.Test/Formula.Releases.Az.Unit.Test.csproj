@@ -16,4 +16,13 @@
     <ProjectReference Include="..\..\src\Formula.Releases.Az\Formula.Releases.Az.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="Data\v1.0.0.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Data\v2.0.0.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>

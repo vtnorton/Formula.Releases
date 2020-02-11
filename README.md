@@ -9,6 +9,20 @@ USAGE: It is used for users on the app [Formula - Universal Code Editor](https:/
 
 ## 👨🏻‍💻 How to run it
 
+### ⚡ Azure Function
+For the Azure Function (Formula.Releases.Az), I recommend develop it with vscode or Visual Studio.
+
+You may need to adjust the `BaseUri` at `local.settings.json` to your host, where the visualizer is set to start.
+
+### ⚛ React application
+
+Once on the Formula.Releases.Visualizer directory, just need to run the following commands:
+
+```
+npm install
+npm start
+```
+
 ## 🔮 Roadmap
 
 I'm sharing with you some of my plans to move foward with this project, right now the priorities comes like this:

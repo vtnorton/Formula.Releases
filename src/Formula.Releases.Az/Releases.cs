@@ -7,20 +7,22 @@ using Formula.Releases.Az.Services;
 
 namespace Formula.Releases.Az
 {
-    public static class Releases
+    public class Releases
     {
+        private ReleaseServices _releaseServices;
+
+        public Releases(ReleaseServices releaseServices) => _releaseServices = releaseServices;
+
         [FunctionName("Get")]
-        public static async Task<object> Run(
+        public object Run(
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req, ExecutionContext context)
         {
             try
             {
-                ReleaseServices releaseServices = new ReleaseServices(context);
-                return releaseServices.GetReleases();
+                return _releaseServices.GetReleases(context);
             }
             catch (Exception ex)
             {
-
                 return $"Error:{ex.Message}";
             }
         }

@@ -2,29 +2,28 @@
 using Microsoft.Azure.WebJobs;
 using System;
 using System.Collections.Generic;
-using System.IO;
 
 namespace Formula.Releases.Az.Services
 {
     public class ReleaseServices
     {
         private string _baseUri;
-        private ExecutionContext _context;
+        private FileServices _fileServices;
 
-        public ReleaseServices(ExecutionContext context)
+        public ReleaseServices(FileServices fileServices)
         {
+            _fileServices = fileServices;
             _baseUri = Environment.GetEnvironmentVariable("BaseUri");
-            _context = context;
         }
 
-        public List<Release> GetReleases()
+        public List<Release> GetReleases(ExecutionContext context)
         {
-            var fileArray = GetFileList();
+            var fileArray = _fileServices.GetFileList(context);
             List<Release> releases = new List<Release>();
 
             for (int i = 0; i < fileArray.Length; i++)
             {
-                string releaseName = GetReleaseName(fileArray[i]);
+                string releaseName = _fileServices.GetReleaseName(fileArray[i]);
 
                 if (!string.IsNullOrEmpty(releaseName))
                     releases.Add(new Release()
@@ -36,27 +35,6 @@ namespace Formula.Releases.Az.Services
             }
 
             return releases;
-        }
-
-        public string[] GetFileList()
-        {
-            try
-            {
-                return Directory.GetFiles(_context.FunctionAppDirectory + "/Data", "*.md");
-            }
-            catch (Exception ex)
-            {
-                throw;
-            }
-        }
-
-        public string GetReleaseName(string path)
-        {
-            if (!path.Contains(".md") && !path.Contains(@"\"))
-                return null;
-
-            int mdIndex = path.IndexOf(".md");
-            return path.Remove(mdIndex, 3).Substring(path.LastIndexOf(@"\")).Remove(0, 1);
         }
     }
 }

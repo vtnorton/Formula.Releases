@@ -4,29 +4,29 @@ using NUnit.Framework;
 using System.IO;
 using FluentAssertions;
 
-namespace Formula.Releases.Az.Unit.Test
+namespace Formula.Releases.Az.Unit.Test.Services
 {
-    public class Tests
+    public class FileServiceTest
     {
-        private ReleaseServices _releaseServices;
+        private ExecutionContext _context;
+        private FileServices _fileServices;
 
         [SetUp]
         public void Setup()
         {
             string testPath = Directory.GetCurrentDirectory();
-            string appPath = Path.GetFullPath(Path.Combine(testPath, @"..\..\..\..\..\src\Formula.Releases.Az\bin\Debug\netcoreapp3.0"));
-            
-            ExecutionContext context = new ExecutionContext
+            _fileServices = new FileServices();
+
+            _context = new ExecutionContext
             {
                 FunctionAppDirectory = testPath
             };
-            _releaseServices = new ReleaseServices(context);
         }
 
         [Test]
         public void ShouldGetListOfFilesPaths()
         {
-            var list = _releaseServices.GetFileList();
+            var list = _fileServices.GetFileList(_context);
 
             list.Should().HaveCount(2);
             list[0].Should().Contain("v1.0.0");
@@ -39,19 +39,9 @@ namespace Formula.Releases.Az.Unit.Test
             var releaseName = "v1.5.9";
             var path = @$"C:\Unit\Tests\Data\{releaseName}.md";
 
-            var result = _releaseServices.GetReleaseName(path);
+            var result = _fileServices.GetReleaseName(path);
 
             result.Should().Be(releaseName);
-        }
-
-        [Test]
-        public void ShouldReturnListOfReleases()
-        {
-            var list = _releaseServices.GetReleases();
-            
-            list.Should().HaveCount(2);
-            list[0].VersionName.Should().Be("v1.0.0");
-            list[1].VersionName.Should().Be("v2.0.0");
         }
     }
 }

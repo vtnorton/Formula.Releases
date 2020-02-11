@@ -1,4 +1,11 @@
-# 📰 The product (Formula.Releases)
+# 📰 The project (Formula.Releases)
+
+This solution is separated in two projects:
+* Formula.Releases.Az: An Azure Function, trigged by a HTML GET that return a list of releases based on the .md files. It includes a link to visualize the changelog.
+* Formula.Releases.Visualizer: A React application that once you passed the name of the release in the route (like: localhost/release/v1.0.0) it shows the content of the .md file.
+
+USAGE: It is used for users on the app [Formula - Universal Code Editor](https://www.microsoft.com/en-us/p/formula-universal-code-editor/9nblggh4wb6b) (version > 4) to view its release notes.
+
 
 ## 👨🏻‍💻 How to run it
 

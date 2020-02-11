@@ -26,7 +26,11 @@ namespace Formula.Releases.Az.Unit.Test
         [Test]
         public void ShouldGetListOfFilesPaths()
         {
-            Assert.Pass();
+            var list = _releaseServices.GetFileList();
+
+            list.Should().HaveCount(2);
+            list[0].Should().Contain("v1.0.0");
+            list[1].Should().Contain("v2.0.0");
         }
 
         [Test]
@@ -48,13 +52,6 @@ namespace Formula.Releases.Az.Unit.Test
             list.Should().HaveCount(2);
             list[0].VersionName.Should().Be("v1.0.0");
             list[1].VersionName.Should().Be("v2.0.0");
-        }
-
-        [Test]
-        public void ShouldNotAddReleaseIfNameIsNull()
-        {
-            var list = _releaseServices.GetReleases();
-            Assert.Pass();
         }
     }
 }

@@ -35,6 +35,8 @@ I'm sharing with you some of my plans to move foward with this project, right no
 
 * Docker: The project needs docker, and that says it all!
 
+* YAML: would love to create the build process with yml.
+
 Constributors of all kinds from the community are welcome, but especially those that support the efforts above.
 
 

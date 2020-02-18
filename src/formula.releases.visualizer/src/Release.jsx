@@ -9,15 +9,15 @@ const VerifyText = text => {
 const Release = props => {
 	const [markdownText, setMarkdownText] = useState("loading...");
 
-	fetch("/data/" + props.match.params.filename + ".md")
+	fetch("/release/" + props.match.params.filename + ".md")
 		.then(response => response.text())
 		.then(text => setMarkdownText(text));
 
 	return props.match.params.filename ? (
 		<ReactMarkdown source={VerifyText(markdownText)} />
 	) : (
-		<div>no file</div>
-	);
+			<div>no file</div>
+		);
 };
 
 export default Release;

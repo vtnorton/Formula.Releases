@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import ReactMarkdown from "react-markdown";
 
 const VerifyText = text => {
-	if (!text.startsWith("<")) return text;
+	console.info('blah', text);
+	if (text.startsWith("<!--")) return text;
 	else return "Something went wrong";
 };
 

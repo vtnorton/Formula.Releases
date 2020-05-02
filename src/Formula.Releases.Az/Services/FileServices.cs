@@ -40,11 +40,11 @@ namespace Formula.Releases.Az.Services
                 using (StreamReader inputStream = new StreamReader(path))
                 {
                     var content = inputStream.ReadToEnd();
-                    if(content.Contains("[comment]: <> (Brief description: "))
-                        dictionary.Add("Description", content.GetBetween("[comment]: <> (Brief description: ", ")"));
+                    if(content.Contains("<!--Brief description: "))
+                        dictionary.Add("Description", content.GetBetween("<!--Brief description: ", ")-->"));
 
-                    if (content.Contains("[comment]: <> (Released at: "))
-                        dictionary.Add("ReleaseDate", content.GetBetween("[comment]: <> (Released at: ", ")"));
+                    if (content.Contains("<!--Released at: "))
+                        dictionary.Add("ReleaseDate", content.GetBetween("<!--Released at: ", ")-->"));
                 }
             }
 

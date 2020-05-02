@@ -23,15 +23,22 @@ namespace Formula.Releases.Az.Services
 
             for (int i = 0; i < fileArray.Length; i++)
             {
-                string releaseName = _fileServices.GetReleaseName(fileArray[i]);
+                var filePath = fileArray[i];
+                string releaseName = _fileServices.GetReleaseName(filePath);
 
                 if (!string.IsNullOrEmpty(releaseName))
+                {
+                    var content = _fileServices.GetContentInfo(filePath);
                     releases.Add(new Release()
                     {
                         Id = i,
                         VersionName = releaseName,
-                        Url = _baseUri + releaseName
+                        Url = _baseUri + releaseName,
+                        Description = content["Description"].ToString(),
+                        ReleaseDate = content["ReleaseDate"].ToString(),
+                        IsPreview =  bool.Parse(content["IsPreview"].ToString())
                     });
+                }
             }
 
             return releases;

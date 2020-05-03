@@ -20,9 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formula.Releases.Az", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formula.Releases.Az.Unit.Test", "tests\Formula.Releases.Az.Unit.Test\Formula.Releases.Az.Unit.Test.csproj", "{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formula.Releases.Wordpress", "Formula.Releases.Wordpress\Formula.Releases.Wordpress.csproj", "{315C068B-6AD8-4AD4-8472-52DFA36AFD51}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Formula.Releases.Domain", "Formula.Releases.Domain\Formula.Releases.Domain.csproj", "{B8BB3F89-F620-4537-8D46-4ADA8E49889F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Formula.Releases.Domain", "Formula.Releases.Domain\Formula.Releases.Domain.csproj", "{B8BB3F89-F620-4537-8D46-4ADA8E49889F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -38,10 +36,6 @@ Global
 		{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293}.Release|Any CPU.Build.0 = Release|Any CPU
-		{315C068B-6AD8-4AD4-8472-52DFA36AFD51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{315C068B-6AD8-4AD4-8472-52DFA36AFD51}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{315C068B-6AD8-4AD4-8472-52DFA36AFD51}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{315C068B-6AD8-4AD4-8472-52DFA36AFD51}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B8BB3F89-F620-4537-8D46-4ADA8E49889F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B8BB3F89-F620-4537-8D46-4ADA8E49889F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8BB3F89-F620-4537-8D46-4ADA8E49889F}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -53,7 +47,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{8EE4F9F8-9065-4F0C-A77A-719FEDF44F7D} = {55315224-D01F-4889-9A30-3B31C6CC4D36}
 		{BDE76C92-005C-4E7B-B6F6-BAD64DEBA293} = {662EFB7E-7565-4C53-8802-BD81D248C6CC}
-		{315C068B-6AD8-4AD4-8472-52DFA36AFD51} = {55315224-D01F-4889-9A30-3B31C6CC4D36}
 		{B8BB3F89-F620-4537-8D46-4ADA8E49889F} = {55315224-D01F-4889-9A30-3B31C6CC4D36}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution

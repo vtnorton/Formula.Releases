@@ -1,7 +1,7 @@
-﻿using Formula.Releases.Az.Model;
-using Microsoft.Azure.WebJobs;
+﻿using Microsoft.Azure.WebJobs;
 using System;
 using System.Collections.Generic;
+using Formula.Releases.Domain;
 
 namespace Formula.Releases.Az.Services
 {
@@ -34,8 +34,8 @@ namespace Formula.Releases.Az.Services
                         Id = i,
                         VersionName = releaseName,
                         Url = _baseUri + releaseName,
-                        Description = content["Description"].ToString(),
-                        ReleaseDate = content["ReleaseDate"].ToString(),
+                        Description = content["Description"]?.ToString(),
+                        ReleaseDate = content["ReleaseDate"]?.ToString(),
                         IsPreview =  bool.Parse(content["IsPreview"].ToString())
                     });
                 }

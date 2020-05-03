@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Formula.Releases.Az.Model
+﻿namespace Formula.Releases.Domain
 {
     public class Release
     {

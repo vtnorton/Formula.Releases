@@ -1,7 +1,7 @@
 ﻿using Microsoft.Azure.WebJobs;
 using System;
 using System.Collections.Generic;
-using Formula.Releases.Domain;
+using Formula.Releases.Az.Model;
 
 namespace Formula.Releases.Az.Services
 {
